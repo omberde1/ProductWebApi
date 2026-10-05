@@ -1,29 +1,6 @@
-﻿namespace ProductWebApi.Models;
+﻿using ProductWebApi.Models.Enums.Product;
 
-// #IMP# Enums are idx based and not string, so 1,,2,etc gets passed not the Enum Name val; Could also manually apply idx
-public enum ProductCategory
-{
-    NA = 0,
-    Electronics = 1,
-    Accessories = 2,
-    Furniture = 3,
-    Clothing = 4,
-    Stationery = 5,
-    Home = 6,
-    Bags = 7
-}
-
-public enum ProductSortByFilter
-{ 
-    PriceAsc = 0,
-    PriceDesc = 1,
-    NameAsc = 2,
-    NameDesc = 3,
-    StockAsc = 4,
-    StockDesc = 5,
-    CreatedAtAsc = 6,
-    CreatedAtDesc = 7
-}
+namespace ProductWebApi.Models;
 
 public class Product
 {

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProductWebApi.Data.InMemory;
 using ProductWebApi.DTOs.Product;
 using ProductWebApi.Models;
-using System.IdentityModel.Tokens.Jwt;
+using ProductWebApi.Models.Enums.Product;
 using System.Security.Claims;
 
 namespace ProductWebApi.Controllers;
