@@ -1,6 +1,7 @@
-﻿namespace ProductWebApi.Data.InMemory;
+﻿using ProductWebApi.Models;
+using ProductWebApi.Models.Enums.Product;
 
-using ProductWebApi.Models;
+namespace ProductWebApi.Data.InMemory;
 
 public class ProductStore
 {

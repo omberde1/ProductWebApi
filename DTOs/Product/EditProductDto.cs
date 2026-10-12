@@ -1,4 +1,4 @@
-﻿using ProductWebApi.Models;
+﻿using ProductWebApi.Models.Enums.Product;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProductWebApi.DTOs.Product

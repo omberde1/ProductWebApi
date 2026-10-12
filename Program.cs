@@ -1,16 +1,22 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using ProductWebApi.Data;
 using ProductWebApi.Data.InMemory;
 using ProductWebApi.Extension.OpenApi;
-using ProductWebApi.Service;
+using ProductWebApi.Services;
 using Scalar.AspNetCore;
 using System.Text;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<AppDbContext>(options => {
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
 builder.Services.AddControllers()
-    // #IMP# : Change enum from idx to string globally
+    // #IMP# : Change enum from idx to string globally supporting both str/int
     .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
 
 builder.Services.AddOpenApi(options =>
